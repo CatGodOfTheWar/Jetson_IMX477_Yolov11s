@@ -1,0 +1,42 @@
+BaseConfig:
+  minDetectorConfidence: 0.70
+
+TargetManagement:
+  maxTargetsPerStream: 50
+  minIouDiff4NewTarget: 0.4       
+  minTrackerConfidence: 0.15
+  probationAge: 8                 
+  maxShadowTrackingAge: 120     
+  earlyTerminationAge: 2
+
+TrajectoryManagement:
+  useUniqueID: 0
+
+DataAssociation:
+  associationMatcherType: 1
+  checkClassMatch: 1
+  minMatchingScore4Overall: -0.3
+  minMatchingScore4SizeSimilarity: 0.1
+  minMatchingScore4Iou: 0.05
+  thresholdMahalanobis: 20.0
+
+StateEstimator:
+  stateEstimatorType: 2
+  noiseWeightVar4Loc: 0.02
+  noiseWeightVar4Vel: 0.0025
+  useAspectRatio: 1
+
+ReID:
+  reidType: 2
+  modelEngineFile: "/home/jetson/Documents/MyDeepstreamApp/models/Tracker/resnet50_market1501.etlt_b100_gpu0_fp16.engine"
+  reidFeatureSize: 256
+  reidHistorySize: 600        
+  inferDims: [3, 256, 128]
+  inputOrder: 0
+  colorFormat: 0
+  networkMode: 1               
+  offsets: [123.675, 116.280, 103.530]
+  netScaleFactor: 0.01735207
+  inputBlobName: "input_1"
+  outputBlobName: "predictions/Softmax"
+  reidExtractionInterval: 1
