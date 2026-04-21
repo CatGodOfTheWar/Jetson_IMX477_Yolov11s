@@ -116,7 +116,9 @@ DeepStream also supports Python through Gst-Python bindings and probe-based acce
 
 ## Pipeline Architecture
 
-![Vision Processing Pipeline](assets/Diagram.png)
+<p align="center">
+  <img src="assets/Diagram.png" alt="Vision Processing Pipeline">
+</p>
 
 ## Hardware Requirements
 
